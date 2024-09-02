@@ -3,6 +3,10 @@ const upload = require('./multer');
 const app = express();
 const PORT = 3000;
 
+app.get('/', (request, response) => {
+    response.send('Hello');
+})
+
 app.use('/uploads', express.static('uploads'));
 
 app.post('/upload', upload.single('image'), (request, response) => {
